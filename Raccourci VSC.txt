@@ -1,0 +1,42 @@
+Manipuler les fichiers
+	-	ouvrir le dossier d'emplacement du fichier travaillé : Crtl+K, R
+	-	copier le nom complet de l'emplacement du fichier travaillé : Crtl+K, P
+	-	parcourir les fichiers ouverts, ou ouvrir dans un nouvel onglet un fichier recemment ouvert : Crtl + P
+
+Manipuler une ligne
+	-	sélectionner une ligne : Crtl+L
+	-	ajouter des balises commentaire à l'endroit du curseur : Crtl+K, Crtl + C OU Crtl+K, Crtl + U OU Shift + Alt + A
+	-	mettre le contenu d'une ligne entre commentaire : Crtl + / (donc sur un clavier azerty: Crtl + :)
+	-	et inversement : n'importe quel de ces raccourcis
+
+Chercher une commande
+	-	liste des commandes et des raccourcis s'il y a, pour en effectuer une : Crtl + Shift + P
+
+CRTL + I 
+	>	affiche un volet permettant de parcourir les mots contenus dans le fichiers (ceux des balises y compris)
+	>	affiche la description contextuelle pour la balise ciblée dans, le volet de recherche/suggestion 
+		qui accompagne l'Ouvertre d'une balise ( <[...] ) dans le fichier.
+
+ALT + Z
+	>	le dépassement des lignes de la fenêtre est interdit, le texte est affiché sur le nombres de lignes nécessaire
+
+Crtl+K, Z 
+	>	Zen mode = Full screen
+
+Se déplacer dans les paquets d'instructions (reduire/ derouler) POUR LE MOMENT:
+
+Reduire TOUT				>	Crtl+K, Crtl + à
+Derouler UN derriere le curseur		>	Crtl + Shift + ^
+Derouler TOUT derriere le curseur	>	Crtl+K, Crtl + ^	( unfold recursively	    )
+Reduire TOUT derrier le curseur		>	Crtl+K, Crtl + )	(  fold  recursively + fold )
+Derouler TOUT				>	Crtl+K, Crtl + j
+
+Reduire par niveau de l'arborescence	>	Crtl+K, Crtl + [ & (<-> 1) - è (<-> 7) ]
+
+Se déplacer sur les lignes
+	-	jusqu'à un numéro de ligne spécifique : Crtl + G
+	-	
+
+Crtl + Shift + *
+	>	Trouver l'accolade appairée à une première
+

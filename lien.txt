@@ -1,0 +1,59 @@
+CREATION
+HTML5 
+regroupés par famille sémantique
+	https://buzut.net/101-balises-html5-exemples/ 
+par ordre alphabétique avec énumération des attributs
+	https://jaetheme.com/balises-html5/
+
+	https://fr.wikipedia.org/wiki/Table_des_caract%C3%A8res_Unicode_(10000-1FFFF)#Symboles_de_jeux
+	https://www.rapidtables.org/fr/web/html/html-codes.html
+
+CSS
+	https://css-tricks.com/snippets/css/
+	https://www.sitepoint.com/html-css/
+	https://wprock.fr/blog/css-selecteurs/
+
+	https://unused-css.com/tools/border-gradient-generator
+		https://theowoo.github.io/agbg/
+	https://unused-css.com/tools/clip-path-generator
+	https://unused-css.com/tools/box-shadow-generator
+		https://getcssscan.com/css-box-shadow-examples
+	https://cssgenerator.org/transform-css-generator.html
+	https://cssgenerator.org/gradient-css-generator.html
+
+	https://alvarotrigo.com/blog/toggle-switch-css/
+	https://www.w3.org/Style/Examples/007/fonts.en.html
+	https://www.w3schools.com/css/css3_animations.asp
+
+
+JS
+	https://www.w3schools.com/jsref/obj_events.asp
+	https://developer.mozilla.org/fr/docs/Web/API/Event
+	https://api.jquery.com/category/manipulation/
+
+	https://fr.javascript.info/basic-dom-node-properties
+	https://www.alsacreations.com/article/lire/1877-les-aides-au-prechargement-des-ressources.html
+
+	https://imjignesh.com/how-to-trigger-css-animation-on-scroll/
+
+SQL
+	https://chartio.com/resources/tutorials/how-to-rename-a-database-in-mysql/
+
+PHP
+	http://sdz.tdct.org/sdz/eviter-le-renvoi-repetitif-d-un-formulaire-en-rafraichissant.html
+	https://www.php.net/manual/fr/control-structures.alternative-syntax.php
+	https://kode.ch/tests/injections.php?s=4
+
+REGEX
+	https://learntutorials.net/fr/regex/topic/259/demarrer-avec-les-expressions-regulieres
+
+OPTIMISATION
+DEV
+	https://sustainableit-tools.isit-europe.org/
+	https://unused-css.com/
+ECO
+	https://gr491.isit-europe.org/
+	https://ecoconception.arneogroup.com/
+SEO
+	https://alyze.info/
+
