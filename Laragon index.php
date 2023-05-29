@@ -1,12 +1,13 @@
-<!-- FROM: LARAGON DEFAULT PAGE, FOR WEB SERVER WWW FOLDER -->
+<!-- EN -->
+<!-- FROM: LARAGON DEFAULT PAGE, FOR WEB SERVER WWW REPERTORY -->
 <!-- Actual official version of this page: https://github.com/leokhoa/laragon/blob/master/www/index.php -->
 
 <!-- In this version: -->
 <!-- ALL HEADER'S ELEMENTS KEPT FROM OFFICIAL VERSION + a link to phpmyadmin + infotip -->
 <!-- TOGGLE SWITCH Inspired by this design from Tim Silva - https://dribbble.com/shots/14199649-Dark-Light-Mode-Toggle-Switch-Pattern-A11y -->
-<!-- FILE AND FOLDER TREE WITH "WWW" FOLDER AS ROOT, GENERATED IN PHP -->
+<!-- FILE AND FOLDER TREE WITH "WWW" REPERTORY AS ROOT, GENERATED IN PHP -->
   <!-- and inspired by the code used in this article about recursivity - unsecure website http://www.finalclap.com/faq/197-php-liste-fichier-dossier-recursif -->
-  <!-- + added a level dimension to the function -->
+  <!-- + added a dimension indicating tree's level to the function -->
 <!-- FILE AND FOLDER TREE DISPLAY MANAGED IN JAVASCRIPT -->
   <!-- FULL DISPLAY : all folders and files after "www" are available to link, but the current page -->
   <!-- DYNAMICAL DISPLAY : move from folder to another -->
@@ -18,6 +19,28 @@
 
 <!-- I WISH YOU AN AGREABLE JOURNEY - healde -->
 
+<!-- FR -->
+<!-- DE: PAGE D'ACCEUIL PAR DEFAUT DE LARAGON, POUR LE RÉPERTOIRE WWW -->
+<!-- VERSION ACTUELLE ET OFFICIELLE DE CETTE PAGE: https://github.com/leokhoa/laragon/blob/master/www/index.php -->
+
+<!-- Dans cette version: -->
+<!-- TOUT LES ÉLÉMENTS DE LA PAGE ORGINALE SONT GARDÉS + un lien vers phpmyadmin + infobulles -->
+<!-- BOUTON DEUX-ÉTATS Inspiré par le design de Tim Silva - https://dribbble.com/shots/14199649-Dark-Light-Mode-Toggle-Switch-Pattern-A11y -->
+<!-- ARBORESCENCE DES DOSSIERS ET FICHIERS, AVEC LE RÉPERTOIRE "WWW" COMME RACINE, GÉNÉRÉ EN PHP -->
+  <!-- et inspiré du code utilisé dans cette article pour illustrer le principe de récursivité - Site web non sécurisé : http://www.finalclap.com/faq/197-php-liste-fichier-dossier-recursif -->
+  <!-- + ajoutée à cette fonction, une dimension pour indiquer le niveau dans l'arborescence -->
+<!-- ARBORESCENCE DES DOSSIERS ET FICHIERS EN JAVASCRIPT -->
+  <!-- SWITCH ACTIF : MODE AFFICHAGE COMPLET : tout les dossiers et fichiers après "www" sont affichés
+       et redirige vers leurs adresses dans le navigateur, à part le fichier correspondant à cette page -->
+  <!-- SWITCH INACTIF : MODE AFFICHAGE PARTIEL ET DYNAMIQUE : se déplacer d'un dossier à un autre -->
+    <!-- le dossier actif est initialisé à la racine étant "www" au chargement, et désactive le lien du fichier correspondant à cette page -->
+    <!-- après un changement de dossier actif, celui ci ne sera pas ré-initialisé sans un rechargement de la page, 
+         et c'est pourquoi le lien du fichier correspondant à cette page est alors rétabli -->
+    <!-- ensuite afficher les dossiers et fichiers qui sont enfants, frères, ou le parent du dossier actif.
+         enfin masquer tout les autres dossier et fichiers, et désactiver entièrement le lien du dossier actif -->
+    <!-- appliquer un style différent pour les liens menant vers un fichier, menant vers un dossier, et ceux entièrement désactivés -->
+
+<!-- EN VOUS SOUHAITANT BONNES PRATIQUES AVEC CETTE PAGE - healde -->
 
 <?php
   if (!empty($_GET['q'])) {
@@ -265,7 +288,7 @@
         niveauactif = cheminactif.split("\\").length - 1;
 
         if (!commande.checked) {
-          // SWITCH INACTIF : N'AFFICHER QUE LES DOSSIERS ET FICHIERS DE L'ARBRE QUI SONT SOUHAITÉS
+          // SWITCH INACTIF : N'AFFICHER QUE LES DOSSIERS ET FICHIERS QUI SE TROUVENT AUTOUR DU DOSSIER ACTIF DANS L'ARBORESCENCE
             document.querySelectorAll(".line").forEach((elem) => { 
             chemin = elem.querySelector('a').getAttribute("href");
             
@@ -274,20 +297,19 @@
               || ( niveauactif == chemin.split("\\").length - 1 && chemin.indexOf(cheminactif.split("\\").slice(0, -1).join('\\')) >= 0 ) // FRÈRES (<> ÉLÉMENTS DE MÊME GENERATION )
               || ( niveauactif == chemin.split("\\").length && cheminactif.indexOf(chemin) >= 0 ) // PARENT (&& AU SINGULIER )
 
-              // PREMIER PARENT
-            ) { elem.hidden=false; // AFFICHER ET ...
+               ) { elem.hidden=false; // AFFICHER ET ...
                 
-                // SI L'ÉLÉMENT EST UN DOSSIER: DÉSACTIVER LE LIEN ET 
-                // APPELER LA FONCTION DE MISE À JOUR DE L'ARBORESCENCE POUR OBTENIR LE NOEUD CLIQUÉ COMME CHEMIN ACTIF
+                // SI L'ÉLÉMENT EST UN DOSSIER: REMPLACER L'ÉXÉCUTION CLASSIQUE DU LIEN, PAR
+                // L'APPEL DE LA FONCTION DE MISE À JOUR DE L'ARBORESCENCE À PARTIR DU NOEUD CLIQUÉ RÉCUPÉRÉ COMME CHEMIN ACTIF
                 elem.querySelector('a').onclick = function (e) { if ( elem.textContent.indexOf(dirlabel) >= 0 ) {
 
                 cheminactif = elem.querySelector('a').getAttribute("href");
                 trier(); // MISE À JOUR DU CHEMIN ACTIF DEPUIS CE NOEUD
 
-                return false; // DESACTIVATION DE CE LIEN
-                }
-            } } 
-          // MASQUER TOUTES LES AUTRES LIGNES
+                return false; // DESACTIVATION DU LIEN, EMPÊCHER QUE CELUI CI NE REDIRIGE VERS UNE NOUVELLE PAGE
+                } }
+            }  
+            // MASQUER TOUTES LES AUTRES LIGNES
             else { elem.hidden=true; }
           });
 
