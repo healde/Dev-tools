@@ -50,7 +50,7 @@ NEW OBJECT : symfony console make:entity
 ------------ UPDATE DATABASE
 
 IF DONE : symfony console doctrine:database:create
-(REQUIRE this file configured : .env )
+(REQUIRE this file configured : /path/PROJECT/.env )
 
 UPDATE : symfony console make:migration
 	 symfony console doctrine:migrations:migrate
