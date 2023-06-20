@@ -1,0 +1,64 @@
+SYMFONY --------------------
+--------------- WITH LARAGON
+
+FIRST USING : PowerShell
+GET SCOOP : iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+GET SYMFONY : scoop install symfony-cli 
+
+THEN USING : Cmder (C:/laragon/bin/cmder )
+EVENTUALY : composer config -g -- disable-tls true
+GET COMPOSER : composer self-update
+
+THEN USING : Cmder OR VSC_Terminal OR OTHER
+
+----------------------------
+---------------- USE PROJECT
+
+LOAD SECURED SERVER : symfony server:ca:install
+
+BASE IN : cd /path (egs: cd /laragon/www )
+IF DONE : symfony --webapp PROJECT
+RE-BASE IN : cd /path/PROJECT
+
+AND RUN SERVER : symfony serve
+(STOP SERVER : symfony server:stop )
+
+----------------------------
+--------------- SAVE & SHARE
+
+CONNECT TO GIT : cd /path/PROJECT
+		 git config --global user.name NAME
+		 git config --global user.mail "MAIL"
+
+SET BASES : 	git remote add ORIGIN https://github.com/DEPOT
+		git branch MAIN
+		git checkout MAIN
+		git add *
+		git commit -m VERSION_TITLE
+		git push --set-upstream ORIGIN MAIN
+
+CHECK : git status
+
+----------------------------
+---------------- DEV PROJECT
+
+NEW PAGE : symfony console make:controller
+
+NEW OBJECT : symfony console make:entity
+
+----------------------------
+------------ UPDATE DATABASE
+
+IF DONE : symfony console doctrine:database:create
+(REQUIRE this file configured : .env )
+
+UPDATE : symfony console make:migration
+	 symfony console doctrine:migrations:migrate
+
+CHECK IF UPDATED OR NOT : symfony console doctrine:schema:validate 
+
+-----------------------------
+
+
+
+	
